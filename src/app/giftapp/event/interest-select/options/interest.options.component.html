@@ -1,0 +1,7 @@
+<div class="options-container">
+  <span class="interest-sub-title">{{title}}</span>
+  <div class="options">
+    <add-option (onAdd)="handleAdd()"></add-option>
+    <interest-option *ngFor="let option of options" [name]="option" (onRemove)="handleRemove($event)"></interest-option>
+  </div>
+</div>

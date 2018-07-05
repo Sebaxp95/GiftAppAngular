@@ -3,7 +3,7 @@
 .gift-card-paper {
   box-sizing: border-box;
   width: 150px;
-  height: 200px;
+  min-height: 200px;
   flex-direction: column;
   text-align: center;
   padding: 0;

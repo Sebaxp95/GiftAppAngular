@@ -50,6 +50,8 @@ export class AppComponent implements OnInit {
     10,
     null
   );
+  public privateInterests = ['a', 'b'];
+  public publicInterests = ['a', 'b'];
 
   constructor(
     public appState: AppState
