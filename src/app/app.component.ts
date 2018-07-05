@@ -4,7 +4,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { environment } from 'environments/environment';
 import { AppState } from './app.service';
-import { Product } from './giftapp/model/product';
+import { Poll, Product } from './giftapp/model/product';
 
 /**
  * App Component
@@ -36,10 +36,10 @@ export class AppComponent implements OnInit {
     '3525d08d6e5fb8d27136e95/p/o/poduszka-dla-samotnych-meskie-ramie-prezenty-pl_4442-2adc0f5d.jpg',
     'https://www.prezenty.pl/poduszka-dla-samotnych-meskie-ramie.html',
     10,
-    {
-      good: 132,
-      bad: 222
-    }
+    new Poll(
+      132,
+      222
+    )
   );
   public product2 = new Product(
     'Poduszka dla samotnych 2',

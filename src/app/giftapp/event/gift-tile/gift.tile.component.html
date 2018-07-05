@@ -13,17 +13,17 @@
     <div *ngIf="product.poll != null" class="poll-container">
       <div
         class="container-horizontal poll-bad poll-option"
-        (click)="onVoteBad(product.name)"
+        (click)="handleVoteBad()"
       >
         <label>{{product.poll.bad}}</label>
         <mat-icon class="poll-icon">thumb_down</mat-icon>
         <!--<ThumbDown class="poll-icon"/>-->
       </div>
-      <mat-icon class="poll-main-icon">poll</mat-icon>
+      <!--<mat-icon class="poll-main-icon">poll</mat-icon>-->
       <!--<Poll class="poll-main-icon"/>-->
       <div
         class="container-horizontal poll-good poll-option"
-        (click)="onVoteGood(product.name)"
+        (click)="handleVoteGood()"
       >
         <label>{{product.poll.good}}</label>
         <mat-icon class="poll-icon">thumb_up</mat-icon>
@@ -32,7 +32,7 @@
     </div>
     <Button
       *ngIf="product.poll == null"
-      (click)="onAddToPollClick(product.name)"
+      (click)="handleAddToPollClick()"
       class="gift-card-button"
     >
       <!--<AddCircleOutline class="gift-card-icon"/>-->

@@ -1,17 +1,27 @@
 export class Product {
-  public name: string;
-  public price: number;
-  public imageUrl: string;
-  public url: string;
-  public popularity: number;
-  public poll: object;
+  name: string;
+  price: number;
+  imageUrl: string;
+  url: string;
+  popularity: number;
+  poll: Poll;
 
-  constructor(name, price, imageUrl, url, popularity, poll) {
+  constructor(name: string, price: number, imageUrl: string, url: string, popularity: number, poll: Poll) {
     this.name = name;
     this.price = price;
     this.imageUrl = imageUrl;
     this.url = url;
     this.popularity = popularity;
     this.poll = poll;
+  }
+}
+
+export class Poll {
+  good: number;
+  bad: number;
+
+  constructor(good: number, bad: number) {
+    this.good = good;
+    this.bad = bad;
   }
 }

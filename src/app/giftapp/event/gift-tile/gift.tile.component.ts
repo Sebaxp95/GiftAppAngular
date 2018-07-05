@@ -1,5 +1,5 @@
 import { Product } from '../../model/product';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'gift-tile-component',
@@ -7,11 +7,24 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./gift.tile.component.css']
 })
 export class GiftTileComponent implements OnInit {
-  @Input() public product: Product;
-  @Input() public onVoteBad: (name: string) => void;
-  @Input() public onVoteGood: (name: string) => void;
-  @Input() public onAddToPollClick: (name: string) => void;
+  @Input() product: Product;
+  @Output() onVoteBad = new EventEmitter();
+  @Output() onVoteGood = new EventEmitter();
+  @Output() onAddToPollClick = new EventEmitter();
 
   public ngOnInit(): void {
   }
+
+  handleVoteBad() {
+    this.onVoteBad.emit(this.product);
+  }
+
+  handleVoteGood() {
+    this.onVoteGood.emit(this.product);
+  }
+
+  handleAddToPollClick() {
+    this.onAddToPollClick.emit(this.product);
+  }
+
 }
