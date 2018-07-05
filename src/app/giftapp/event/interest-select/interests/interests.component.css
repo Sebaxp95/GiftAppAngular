@@ -1,0 +1,26 @@
+.interest-title {
+  font-size: 24px;
+  margin: 10px 20px 10px 12px;
+  font-weight: bold;
+}
+
+.interest-view{
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.interest-sub-title {
+  font-size: 18px;
+  margin: 10px 40px 10px 20px;
+  font-weight: 400;
+}
+
+.text-cta {
+  color: #FB8C00;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.text-cta:hover {
+  text-decoration: underline;
+}

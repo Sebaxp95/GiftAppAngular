@@ -1,0 +1,22 @@
+<div class="interest-view">
+  <div class="d-horizontal-left-baseline">
+    <span class="interest-title">Wybierz kategorie prezentów</span>
+    <label class="text-cta" (click)="handleToggleVisibility()">{{show ? "Ukryj" : "Pokaż"}}</label>
+  </div>
+
+  <div *ngIf="show">
+    <interest-options
+      (onAdd)="handlePublicAdd()"
+      (onRemove)="handlePublicRemove($event)"
+      [options]="publicInterests"
+      [title]="'Widoczne przez uczestników wydarzenia'"
+    ></interest-options>
+    <interest-options
+      (onAdd)="handlePrivateAdd()"
+      (onRemove)="handlePrivateRemove($event)"
+      [options]="privateInterests"
+      [title]="'Widoczne tylko przez Ciebie'"
+    ></interest-options>
+  </div>
+
+</div>

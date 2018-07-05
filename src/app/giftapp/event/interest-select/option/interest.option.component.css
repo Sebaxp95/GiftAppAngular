@@ -1,0 +1,24 @@
+.option {
+  border-radius: 15px;
+  background: #E0E0E0;
+  display: inline-flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 10px;
+}
+
+.option-label {
+  font-size: 14px;
+  height: auto;
+  margin: 5px 10px;
+}
+
+.option-remove-button {
+  margin: 10px 10px 10px 0;
+  color: #718792;
+}
+
+.option-remove-button:hover {
+  color: #455A64;
+  cursor: pointer;
+}

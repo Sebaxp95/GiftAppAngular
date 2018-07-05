@@ -25,6 +25,10 @@ import '../styles/headings.css';
 import { GiftTileComponent } from './giftapp/event/gift-tile/gift.tile.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
+import { InterestOptionComponent } from './giftapp/event/interest-select/option/interest.option.component';
+import { AddOptionComponent } from './giftapp/event/interest-select/add-option/add.option.component';
+import { InterestOptionsComponent } from './giftapp/event/interest-select/options/interest.options.component';
+import { InterestsComponent } from './giftapp/event/interest-select/interests/interests.component';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -49,7 +53,11 @@ interface StoreType {
     HomeComponent,
     NoContentComponent,
     XLargeDirective,
-    GiftTileComponent
+    GiftTileComponent,
+    InterestOptionComponent,
+    AddOptionComponent,
+    InterestOptionsComponent,
+    InterestsComponent
   ],
   /**
    * Import Angular's modules.
