@@ -22,6 +22,9 @@ import { DevModuleModule } from './+dev-module';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
+import { GiftTileComponent } from './giftapp/event/gift-tile/gift.tile.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -45,7 +48,8 @@ interface StoreType {
     AboutComponent,
     HomeComponent,
     NoContentComponent,
-    XLargeDirective
+    XLargeDirective,
+    GiftTileComponent
   ],
   /**
    * Import Angular's modules.
@@ -56,6 +60,8 @@ interface StoreType {
     FormsModule,
     HttpClientModule,
     MatSelectModule,
+    MatIconModule,
+    MatCardModule,
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,
       preloadingStrategy: PreloadAllModules
