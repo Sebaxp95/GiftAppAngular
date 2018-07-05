@@ -1,15 +1,16 @@
 <div>
   <mat-card ngClass="{{product.poll != null ? 'poll-gift-card gift-card-paper' : 'gift-card-paper'}}">
 
+    <mat-icon *ngIf="product.poll != null" class="poll-remove">cancel</mat-icon>
+
     <div class="gift-card-div-style">
       <a href={{product.url}}>
         <img alt="{{product.name + ' image'}}" src="{{product.imageUrl}}" class="gift-card-gift-image"/>
         <div class="gift-card-name"> {{product.name}}</div>
         <div class="gift-card-price">{{product.price}} zł</div>
       </a>
-
-
     </div>
+
     <div *ngIf="product.poll != null" class="poll-container">
       <div
         class="container-horizontal poll-bad poll-option"

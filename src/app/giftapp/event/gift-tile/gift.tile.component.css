@@ -48,9 +48,16 @@ a {
   font-size: 10px;
 }
 
+/* POLL */
 
+.poll-remove {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  color: #555555;
+  cursor: pointer;
+}
 
-/* GIFT CARD POLL */
 .container-horizontal {
   display: flex;
   flex-direction: row;
