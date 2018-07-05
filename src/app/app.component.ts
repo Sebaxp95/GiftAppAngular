@@ -4,6 +4,7 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { environment } from 'environments/environment';
 import { AppState } from './app.service';
+import { Product } from './giftapp/model/product';
 
 /**
  * App Component
@@ -15,57 +16,7 @@ import { AppState } from './app.service';
   styleUrls: [
     './app.component.css'
   ],
-  template: `
-    <nav>
-      <a [routerLink]=" ['./'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Index
-      </a>
-      <a [routerLink]=" ['./home'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Home
-      </a>
-      <a [routerLink]=" ['./detail'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Detail
-      </a>
-      <a [routerLink]=" ['./barrel'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        Barrel
-      </a>
-      <a [routerLink]=" ['./about'] "
-        routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        About
-      </a>
-      <a *ngIf="showDevModule" [routerLink]=" ['./dev-module'] "
-         routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}">
-        DevModule
-      </a>
-    </nav>
-
-    <main>
-      <router-outlet></router-outlet>
-    </main>
-
-    <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
-
-    <footer>
-      <span>Angular Starter by <a [href]="twitter">@gdi2290</a></span>
-      <div>
-        <a [href]="url">
-          <img [src]="tipe" width="25%">
-        </a>
-      </div>
-    </footer>
-
-    <mat-form-field>
-      <mat-select placeholder="Favourite pages">
-        <mat-option *ngFor="let page of pages" [value]="page.value">
-          {{ page.viewValue }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  `
+  templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
   public name = 'Angular Starter';
@@ -78,10 +29,32 @@ export class AppComponent implements OnInit {
     {value: 'gith', viewValue: 'GitHub'},
     {value: 'wikip', viewValue: 'Wikipedia'}
   ];
+  public product1 = new Product(
+    'Poduszka dla samotnych',
+    20,
+    'https://cdn1.prezenty.pl/media/catalog/product/cache/8/small_image/480x/9df78eab3' +
+    '3525d08d6e5fb8d27136e95/p/o/poduszka-dla-samotnych-meskie-ramie-prezenty-pl_4442-2adc0f5d.jpg',
+    'https://www.prezenty.pl/poduszka-dla-samotnych-meskie-ramie.html',
+    10,
+    {
+      good: 132,
+      bad: 222
+    }
+  );
+  public product2 = new Product(
+    'Poduszka dla samotnych 2',
+    20,
+    'https://cdn1.prezenty.pl/media/catalog/product/cache/8/small_image/480x/9df78eab3' +
+    '3525d08d6e5fb8d27136e95/p/o/poduszka-dla-samotnych-meskie-ramie-prezenty-pl_4442-2adc0f5d.jpg',
+    'https://www.prezenty.pl/poduszka-dla-samotnych-meskie-ramie.html',
+    10,
+    null
+  );
 
   constructor(
     public appState: AppState
-  ) {}
+  ) {
+  }
 
   public ngOnInit() {
     console.log('Initial App State', this.appState.state);

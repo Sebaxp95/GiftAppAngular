@@ -1,0 +1,43 @@
+<div>
+  <mat-card ngClass="{{product.poll != null ? 'poll-gift-card gift-card-paper' : 'gift-card-paper'}}">
+
+    <div class="gift-card-div-style">
+      <a href={{product.url}}>
+        <img alt="{{product.name + ' image'}}" src="{{product.imageUrl}}" class="gift-card-gift-image"/>
+        <div class="gift-card-name"> {{product.name}}</div>
+        <div class="gift-card-price">{{product.price}} zł</div>
+      </a>
+
+
+    </div>
+    <div *ngIf="product.poll != null" class="poll-container">
+      <div
+        class="container-horizontal poll-bad poll-option"
+        (click)="onVoteBad(product.name)"
+      >
+        <label>{{product.poll.bad}}</label>
+        <mat-icon class="poll-icon">thumb_down</mat-icon>
+        <!--<ThumbDown class="poll-icon"/>-->
+      </div>
+      <mat-icon class="poll-main-icon">poll</mat-icon>
+      <!--<Poll class="poll-main-icon"/>-->
+      <div
+        class="container-horizontal poll-good poll-option"
+        (click)="onVoteGood(product.name)"
+      >
+        <label>{{product.poll.good}}</label>
+        <mat-icon class="poll-icon">thumb_up</mat-icon>
+        <!--<ThumbUp class="poll-icon"/>-->
+      </div>
+    </div>
+    <Button
+      *ngIf="product.poll == null"
+      (click)="onAddToPollClick(product.name)"
+      class="gift-card-button"
+    >
+      <!--<AddCircleOutline class="gift-card-icon"/>-->
+      <mat-icon class="gift-card-icon">add_circle_outline</mat-icon>
+      Dodaj do głosowania
+    </Button>
+  </mat-card>
+</div>
